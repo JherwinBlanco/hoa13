@@ -1,0 +1,16 @@
+---
+
+- hosts: all
+  become: true
+  pre_tasks: 
+
+
+- hosts: controller_node 
+  become: true
+  roles:
+    - ntp
+    - packages
+    - database
+    - message_queue
+    - memcached
+    - etcd
